@@ -1,5 +1,5 @@
 import { UserService } from "../../services/user.service.js";
-import { UserComponentStyle } from "./user.component.style.js";
+import { UserComponentStyle } from "./user-style.component.js";
 
 class UsersComponent {
   constructor() {
@@ -9,14 +9,8 @@ class UsersComponent {
   }
 
   setUsersTable() {
-    this.users.then(users => {
-      document.querySelector("#app").innerHTML = users;
-    });
-  }
-
-  get users() {
-    return this.userService.users.then(users => {
-      return `
+    this.userService.users.then(users => {
+      document.querySelector("#app").innerHTML = `
         <table>
           <thead>
             <tr>

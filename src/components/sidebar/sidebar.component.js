@@ -6,17 +6,11 @@ class SidebarComponent {
     this.setSidebar();
   }
 
-  get sidebar() {
-    return `
+  setSidebar() {
+    document.querySelector(".sidebar-container").innerHTML = `
       <div class="sidebar">
-    
-      
       </div>
     `;
-  }
-
-  setSidebar() {
-    document.querySelector(".sidebar-container").innerHTML = this.sidebar;
   }
 }
 
