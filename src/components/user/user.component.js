@@ -10,7 +10,7 @@ class UsersComponent {
 
   setUsersTable() {
     this.userService.users.then(users => {
-      document.querySelector("#app").innerHTML = `
+      document.querySelector(".users-table").innerHTML = `
         <table>
           <thead>
             <tr>

@@ -1,4 +1,29 @@
 body {
   font-family: sans-serif;
-  margin: 2% 10% 2% 10%;
+  background-color: red;
+}
+
+.header-container {
+  grid-area: header;
+}
+.sidebar-container {
+  grid-area: sidebar;
+  height: 100%;
+}
+.main {
+  grid-area: main;
+}
+
+.grid-container {
+  height: 100% !important;
+  display: grid;
+  grid-template-areas:
+    "sidebar header header header header header header"
+    "sidebar main main main main main main"
+    "sidebar main main main main main main"
+    "sidebar main main main main main main"
+    "sidebar main main main main main main";
+  grid-gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
 }

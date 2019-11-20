@@ -9,6 +9,7 @@ class SidebarComponent {
   setSidebar() {
     document.querySelector(".sidebar-container").innerHTML = `
       <div class="sidebar">
+        <input type="text">
       </div>
     `;
   }

@@ -1,5 +1,7 @@
-import UserComponent from "./components/user/user.component";
+import HeaderComponent from "./components/header/header.component";
 import SidebarStyleComponent from "./components/sidebar/sidebar.component";
+import UserComponent from "./components/user/user.component";
 
-new UserComponent();
+new HeaderComponent();
 new SidebarStyleComponent();
+new UserComponent();

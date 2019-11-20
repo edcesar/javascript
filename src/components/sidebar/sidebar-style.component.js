@@ -5,9 +5,9 @@ export class SidebarStyleComponent {
       `
       <style type="text/css">
 					.sidebar {
-            float: left;
-            width: 10%;
-            height: 700px;
+            // float: left;
+            width: 100%;
+            height: 100%;
             border: 1px solid #ccc;
             background-color: #ccc;
             margin-right: 10px;
