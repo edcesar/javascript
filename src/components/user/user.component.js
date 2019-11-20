@@ -1,5 +1,5 @@
 import { UserService } from "../../services/user.service.js";
-import { UserComponentStyle } from "./user-component.style.js";
+import { UserComponentStyle } from "./user.component.style.js";
 
 class UsersComponent {
   constructor() {
