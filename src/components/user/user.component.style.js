@@ -5,7 +5,7 @@ export class UserComponentStyle {
       `
       <style type="text/css">
 					table {
-						width: 100%;
+						width: 80%;
 					}
 					
 					table td {
