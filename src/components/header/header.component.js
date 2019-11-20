@@ -1,4 +1,4 @@
-import { HeaderStyleComponent } from "./header-style.component";
+import { HeaderStyleComponent } from "./header-style.component.js";
 
 class HeaderComponent {
   constructor() {
