@@ -10,6 +10,7 @@ class SidebarComponent {
     document.querySelector(".sidebar-container").innerHTML = `
       <div class="sidebar">
         <input type="text">
+        <button onClick="$app.user.adicionar()">Criar novo usuario</button>
       </div>
     `;
   }

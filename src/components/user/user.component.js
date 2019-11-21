@@ -7,7 +7,7 @@ class UsersComponent {
     this.users = [];
     this.userService = new UserService();
     this.setUsers().then(() => {
-      this.setUsersTable();
+      this.updateUsersTable();
     });
   }
 
@@ -17,8 +17,7 @@ class UsersComponent {
     });
   }
 
-  setUsersTable() {
-    console.log(this.users);
+  updateUsersTable() {
     document.querySelector(".users-table").innerHTML = `
         <table>
           <thead>
@@ -51,6 +50,19 @@ class UsersComponent {
     `;
   }
 
+  adicionar() {
+    const user = {
+      id: '101',
+      name: 'joao',
+      email: 'joao@gmail.com',
+      website: 'joao.com',
+      phone: '11955448877'
+    }
+
+    this.users.push(user);
+    this.updateUsersTable();
+  }
+
   remover(userId) {
     var removeIndex = this.users
       .map(function(item) {
@@ -62,7 +74,7 @@ class UsersComponent {
 
     this.userService.delete(userId).then(res => {
       console.log(res)
-      this.setUsersTable();
+      this.updateUsersTable();
     });
   }
 }
