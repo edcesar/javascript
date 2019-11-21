@@ -52,7 +52,7 @@ class UsersComponent {
 
   adicionar() {
     const user = {
-      id: "101",
+      id: 101,
       name: "joao",
       email: "joao@gmail.com",
       website: "joao.com",
