@@ -4,4 +4,12 @@ export class UserService {
       return users.json();
     });
   }
+
+  remove(userId) {
+    return fetch("https://jsonplaceholder.typicode.com/users/" + userId, {
+      method: "DELETE"
+    })
+      .then(res => res.json())
+      .then(res => console.log(res));
+  }
 }

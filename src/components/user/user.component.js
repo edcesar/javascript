@@ -3,14 +3,23 @@ import { UserComponentStyle } from "./user-style.component.js";
 
 class UsersComponent {
   constructor() {
-    this.userService = new UserService();
     UserComponentStyle.setStyle();
-    this.setUsersTable();
+    this.users = [];
+    this.userService = new UserService();
+    this.setUsers().then(() => {
+      this.setUsersTable();
+    });
+  }
+
+  setUsers() {
+    return this.userService.users.then(users => {
+      this.users = users;
+    });
   }
 
   setUsersTable() {
-    this.userService.users.then(users => {
-      document.querySelector(".users-table").innerHTML = `
+    console.log(this.users);
+    document.querySelector(".users-table").innerHTML = `
         <table>
           <thead>
             <tr>
@@ -18,10 +27,11 @@ class UsersComponent {
               <th>Email</th>
               <th>Website</th>
               <th>Fone</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            ${users
+            ${this.users
               .map(user => {
                 return `
             <tr>
@@ -29,6 +39,9 @@ class UsersComponent {
               <td>${user.email}</td>
               <td>${user.website}</td>
               <td>${user.phone}</td>
+              <td>
+                <button onClick="$app.user.remover(${user.id})">X</button>
+              </td>
             </tr>
             `;
               })
@@ -36,7 +49,17 @@ class UsersComponent {
           </tbody>
         </table>
     `;
-    });
+  }
+
+  remover(userId) {
+    var removeIndex = this.users
+      .map(function(item) {
+        return item.id;
+      })
+      .indexOf(userId);
+
+    this.users.splice(removeIndex, 1);
+    this.setUsersTable();
   }
 }
 
