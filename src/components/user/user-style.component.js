@@ -15,7 +15,7 @@ export class UserComponentStyle {
 					table tr:hover {
 						background: #ccc;
 					}
-				</style>
+			</style>
 		`
     );
   }

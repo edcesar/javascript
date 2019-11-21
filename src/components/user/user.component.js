@@ -52,30 +52,20 @@ class UsersComponent {
 
   adicionar() {
     const user = {
-      id: '101',
-      name: 'joao',
-      email: 'joao@gmail.com',
-      website: 'joao.com',
-      phone: '11955448877'
-    }
+      id: "101",
+      name: "joao",
+      email: "joao@gmail.com",
+      website: "joao.com",
+      phone: "11955448877"
+    };
 
     this.users.push(user);
     this.updateUsersTable();
   }
 
   remover(userId) {
-    var removeIndex = this.users
-      .map(function(item) {
-        return item.id;
-      })
-      .indexOf(userId);
-
-    this.users.splice(removeIndex, 1);
-
-    this.userService.delete(userId).then(res => {
-      console.log(res)
-      this.updateUsersTable();
-    });
+    this.users = this.users.filter(user => user.id !== userId);
+    this.userService.delete(userId).then(res => this.updateUsersTable());
   }
 }
 
