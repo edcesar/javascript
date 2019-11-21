@@ -59,7 +59,11 @@ class UsersComponent {
       .indexOf(userId);
 
     this.users.splice(removeIndex, 1);
-    this.setUsersTable();
+
+    this.userService.delete(userId).then(res => {
+      console.log(res)
+      this.setUsersTable();
+    });
   }
 }
 
